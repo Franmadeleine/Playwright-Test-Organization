@@ -1,31 +1,32 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Sign in negative tests', () => {
-
-  test.beforeEach( async ({ page }) => {
+  test.beforeEach(async ({ page }) => {
     await page.goto('https://conduit.mate.academy/user/login');
   });
 
   test('Assert error message for empty password', async ({ page }) => {
-  await page.getByPlaceholder('Email').fill('test@gmail.com');
-  await page.getByRole('button', { name: 'Sign in' }).click();
-
-  await expect(page.getByRole('list').nth(1)).toContainText(`password:can\'t be blank`);
+    await page.getByPlaceholder('Email').fill('test@gmail.com');
+    await page.getByRole('button', { name: 'Sign in' }).click();
+    await expect(page.getByRole('list').nth(1)).toContainText(
+      `password:can't be blank`,
+    );
   });
 
   test('Assert error message for empty email', async ({ page }) => {
     await page.getByPlaceholder('Password').fill('newpass123!');
     await page.getByRole('button', { name: 'Sign in' }).click();
-  
-    await expect(page.getByRole('list').nth(1)).toContainText(`email:can't be blank`);
+    await expect(page.getByRole('list').nth(1)).toContainText(
+      `email:can't be blank`,
+    );
   });
 
   test('Assert error message for wrong password', async ({ page }) => {
     await page.getByPlaceholder('Email').fill('test@gmail.com');
     await page.getByPlaceholder('Password').fill('1');
     await page.getByRole('button', { name: 'Sign in' }).click();
-  
-    await expect(page.getByRole('list').nth(1)).toContainText(`email or password:is invalid`);
+    await expect(page.getByRole('list').nth(1)).toContainText(
+      `email or password:is invalid`,
+    );
   });
-
 });
