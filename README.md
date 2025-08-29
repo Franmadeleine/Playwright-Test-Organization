@@ -1,4 +1,4 @@
-<img src="./banner.png" alt="Capa do Projeto" width="600"/>
+<img src="./banner.png" alt="Capa do Projeto" width="200"/>
 
 📌 About the Project
 
