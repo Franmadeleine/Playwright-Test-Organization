@@ -1,4 +1,4 @@
-![Capa do Projeto](./banner.png)
+<img src="./banner.png" alt="Capa do Projeto" width="600"/>
 
 📌 About the Project
 
