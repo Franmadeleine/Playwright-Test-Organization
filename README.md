@@ -1,3 +1,5 @@
+![Capa do Projeto](./banner.png)
+
 📌 About the Project
 
 This project focuses on applying best practices in organizing and refactoring automated tests using the Playwright framework. The tests were designed to validate the sign-up flow of a web application, with emphasis on negative scenarios — cases where the user submits invalid or incomplete data.
